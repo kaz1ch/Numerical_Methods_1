@@ -57,7 +57,7 @@ namespace Numerical_Methods_1
         private void button1_Click(object sender, EventArgs e) 
         {
             double[] x_array = new double[5] { h / 2, h * 3 / 2, h * 5 / 2, h * 9 / 2, h * 13 / 2 };
-            double a = 0, b = 2 * Pi, step = 0.1;
+            double a = 0, b = 2 * Pi, step = 0.01;
             double x = a + step, y;
             this.chart1.Series[0].Points.Clear();
 
