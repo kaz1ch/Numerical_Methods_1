@@ -65,6 +65,21 @@ namespace Numerical_Methods_1
             {
                 y = L(x);
                 this.chart1.Series[0].Points.AddXY(x, y);
+                /*y = Phi(x, 1);
+                this.chart1.Series[1].Points.AddXY(x, y);
+                y = Phi(x, 2);
+                this.chart1.Series[2].Points.AddXY(x, y);
+                y = Phi(x, 3);
+                this.chart1.Series[3].Points.AddXY(x, y);
+                y = Phi(x, 4);
+                this.chart1.Series[4].Points.AddXY(x, y);
+                y = Phi(x, 5);
+                this.chart1.Series[5].Points.AddXY(x, y);*/
+                /*for (int i = 1; i != 6; i++)
+                {
+                    y = Phi(x, i);
+                    this.chart1.Series[i].Points.AddXY(x, y);
+                }*/
                 x += step;
             }
         }
