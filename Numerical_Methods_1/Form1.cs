@@ -12,7 +12,7 @@ namespace Numerical_Methods_1
 {
     public partial class Form1 : Form
     {
-        const double Pi = 3.141592653589793;
+        const double Pi = 3.14;
         const double h = Pi / 7;
         public Form1()
         {
@@ -32,7 +32,12 @@ namespace Numerical_Methods_1
 
             while (j <= 5)
             {
-                if (i != j) Phi_Result *= (x - x_array[j - 1]) /(x_array[i - 1] - x_array[j - 1]);
+                if (i != j)
+                {
+                    double numerator = x - x_array[j - 1];
+                    double denominator = x_array[i - 1] - x_array[j - 1];
+                    Phi_Result *= numerator / denominator;
+                }
                 j++;
             }
 
@@ -65,21 +70,15 @@ namespace Numerical_Methods_1
             {
                 y = L(x);
                 this.chart1.Series[0].Points.AddXY(x, y);
-                /*y = Phi(x, 1);
-                this.chart1.Series[1].Points.AddXY(x, y);
-                y = Phi(x, 2);
-                this.chart1.Series[2].Points.AddXY(x, y);
-                y = Phi(x, 3);
-                this.chart1.Series[3].Points.AddXY(x, y);
-                y = Phi(x, 4);
-                this.chart1.Series[4].Points.AddXY(x, y);
-                y = Phi(x, 5);
-                this.chart1.Series[5].Points.AddXY(x, y);*/
-                /*for (int i = 1; i != 6; i++)
+
+                for (int i = 1; i != 6; i++)
                 {
                     y = Phi(x, i);
                     this.chart1.Series[i].Points.AddXY(x, y);
-                }*/
+                }
+
+                y = f(x);
+                this.chart1.Series[6].Points.AddXY(x, y);
                 x += step;
             }
         }
